@@ -1,0 +1,753 @@
+[accessibility]
+high_contrast = false
+ui_scale = 0.85000002384185791
+
+[audio]
+enable_overdrive = false
+enable_sounds = false
+notification_sound = ""
+sound_volume = 0.5
+volume_change_sound = ""
+
+[backdrop]
+blur_intensity = 0.5
+enabled = false
+tint_intensity = 0.30000001192092896
+
+[bar]
+order = [ "default" ]
+
+    [bar.default]
+    auto_hide = false
+    background_opacity = 1.0
+    border = "outline"
+    border_width = 0.0
+    capsule = false
+    capsule_fill = "surface_variant"
+    capsule_opacity = 0.6
+    capsule_padding = 12.0
+    capsule_radius = 12
+    capsule_thickness = 1.0
+    center = [ "clock" ]
+    concave_edge_corners = false
+    contact_shadow = false
+    enabled = true
+    end = [ "tray", "media", "brightness", "volume", "network", "bluetooth", "theme_mode", "notifications", "battery" ]
+    font_family = "JetBrainsMono Nerd Font"
+    font_weight = 600
+    hover_highlight = true
+    layer = "top"
+    margin_edge = 6
+    margin_ends = 8
+    margin_opposite_edge = 0
+    padding = 14
+    panel_overlap = 0
+    position = "top"
+    radius = 12
+    radius_bottom_left = 12
+    radius_bottom_right = 12
+    radius_top_left = 12
+    radius_top_right = 12
+    reserve_space = true
+    scale = 1.0
+    shadow = true
+    show_on_workspace_switch = true
+    smart_auto_hide = false
+    start = [ "launcher", "workspaces", "temp", "ram" ]
+    thickness = 26
+    widget_spacing = 10
+    capsule_group = []
+
+[battery]
+warning_threshold = 10
+
+[brightness]
+enable_ddcutil = true
+ignore_mmids = []
+minimum_brightness = 0.0
+sync_all_monitors = false
+
+[calendar]
+enabled = false
+refresh_minutes = 15
+
+[control_center]
+hidden_tabs = [ "screen-time" ]
+sidebar = "compact"
+sidebar_section = "full"
+width = 700
+
+    [control_center.calendar]
+    show_events_card = true
+
+    [[control_center.shortcuts]]
+    type = "alexander/screen-toolkit:toggle"
+
+    [[control_center.shortcuts]]
+    type = "nightlight"
+
+    [[control_center.shortcuts]]
+    type = "clipboard"
+
+    [[control_center.shortcuts]]
+    type = "system"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/wallhaven:shortcut"
+
+    [[control_center.shortcuts]]
+    type = "noctalia/mpvpaper:shortcut"
+
+[desktop_widgets]
+enabled = true
+schema_version = 2
+
+    [desktop_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+[dock]
+active_monitor_only = false
+active_opacity = 1.0
+active_scale = 1.0
+auto_hide = false
+background_opacity = 0.39999999105930328
+border = "outline"
+border_width = 1.5
+concave_edge_corners = false
+cross_axis_padding = 3
+enabled = false
+icon_size = 30
+inactive_opacity = 0.99999997764825821
+inactive_scale = 1.0
+item_spacing = 0
+launcher_custom_image = ""
+launcher_custom_image_colorize = false
+launcher_icon = "brand-finder"
+launcher_position = "start"
+magnification = true
+magnification_scale = 1.2500000037252903
+main_axis_padding = 2
+margin_edge = 5
+margin_ends = 0
+monitors = []
+pinned = []
+position = "bottom"
+radius = 0
+radius_bottom_left = 10
+radius_bottom_right = 10
+radius_top_left = 10
+radius_top_right = 10
+reserve_space = true
+shadow = true
+show_dots = true
+show_instance_count = false
+show_running = true
+smart_auto_hide = false
+
+[hooks]
+battery_charging = []
+battery_discharging = []
+battery_percentage_changed = []
+battery_plugged = []
+bluetooth_disabled = []
+bluetooth_enabled = []
+colors_changed = [ "sleep 1 && hyprctl reload" ]
+logging_out = []
+power_profile_changed = []
+rebooting = []
+session_locked = []
+session_unlocked = []
+shutting_down = []
+started = []
+theme_mode_changed = []
+wallpaper_changed = []
+wifi_disabled = []
+wifi_enabled = []
+
+[hot_corners]
+delay_ms = 0
+enabled = false
+
+    [hot_corners.bottom_left]
+    action = "none"
+    command = ""
+
+    [hot_corners.bottom_right]
+    action = "none"
+    command = ""
+
+    [hot_corners.top_left]
+    action = "none"
+    command = ""
+
+    [hot_corners.top_right]
+    action = "none"
+    command = ""
+
+[idle]
+behavior_order = [ "lock", "screen-off", "lock-and-suspend" ]
+pre_action_fade_seconds = 2.0
+
+    [idle.behavior.lock]
+    action = "lock"
+    command = ""
+    enabled = true
+    resume_command = ""
+    timeout = 1800.0
+
+    [idle.behavior.lock-and-suspend]
+    action = "lock_and_suspend"
+    command = ""
+    enabled = false
+    resume_command = ""
+    timeout = 900.0
+
+    [idle.behavior.screen-off]
+    action = "screen_off"
+    command = ""
+    enabled = false
+    resume_command = ""
+    timeout = 660.0
+
+[keybinds]
+cancel = [ "Escape" ]
+down = [ "Down" ]
+left = [ "Left" ]
+right = [ "Right" ]
+tab_next = [ "Tab" ]
+tab_previous = [ "Shift+ISO_Left_Tab" ]
+up = [ "Up" ]
+validate = [ "Return", "KP_Enter", "space" ]
+
+[location]
+address = ""
+auto_locate = true
+custom_schedule = false
+sunrise = ""
+sunset = ""
+
+[lockscreen]
+allow_empty_password = false
+blur_intensity = 0.29999999329447746
+blurred_desktop = false
+enabled = true
+fingerprint = true
+monitors = []
+tint_intensity = 0.0
+wallpaper = ""
+
+[lockscreen_widgets]
+enabled = true
+schema_version = 2
+widget_order = [ "lockscreen-login-box@DP-1", "lockscreen-widget-0000000000000001", "lockscreen-widget-0000000000000002" ]
+
+    [lockscreen_widgets.grid]
+    cell_size = 16
+    major_interval = 4
+    visible = true
+
+    [lockscreen_widgets.widget."lockscreen-login-box@DP-1"]
+    box_height = 70.0
+    box_width = 528.0
+    cx = 960.0
+    cy = 847.0
+    enabled = true
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "login_box"
+
+        [lockscreen_widgets.widget."lockscreen-login-box@DP-1".settings]
+        background_color = "surface_variant"
+        background_opacity = 0.59999999999999998
+        background_radius = 0.0
+        center_password_text = true
+        input_opacity = 0.0
+        input_radius = 6.0
+        layout = "compact"
+        show_caps_lock = true
+        show_keyboard_layout = true
+        show_login_button = true
+        show_media = true
+        show_session_buttons = true
+        show_unlock_hint = false
+        show_weather = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000001]
+    box_height = 160.0
+    box_width = 368.0
+    cx = 1040.0
+    cy = 716.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "audio_visualizer"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000001.settings]
+        background = true
+        background_color = "surface_variant"
+        background_opacity = 0.59999999999999998
+        background_padding = 0
+        background_radius = 0
+        bands = 24
+        mirrored = true
+        show_when_idle = true
+
+    [lockscreen_widgets.widget.lockscreen-widget-0000000000000002]
+    box_height = 160.0
+    box_width = 144.0
+    cx = 768.0
+    cy = 716.0
+    output = "DP-1"
+    placement_height = 1080.0
+    placement_width = 1920.0
+    rotation = 0.0
+    type = "media_player"
+
+        [lockscreen_widgets.widget.lockscreen-widget-0000000000000002.settings]
+        background_color = "surface_variant"
+        background_opacity = 0.59999999999999998
+        background_padding = 8
+        background_radius = 0
+        font_family = "JetBrainsMono NF ExtraBold"
+        hide_when_no_media = false
+        layout = "vertical"
+
+[nightlight]
+enabled = false
+force = false
+temperature_day = 6300
+temperature_night = 5700
+
+[notification]
+background_opacity = 0.39999999105930328
+border = true
+collapse_on_dismiss = true
+enable_daemon = true
+layer = "top"
+monitors = []
+offset_x = 20
+offset_y = 8
+position = "top_right"
+scale = 1.0
+show_actions = true
+show_app_name = true
+
+[osd]
+background_opacity = 0.39999999105930328
+border = true
+enabled = true
+monitors = []
+offset_x = 20
+offset_y = 8
+orientation = "horizontal"
+position = "top_center"
+position_vertical = "top_center"
+scale = 1.0
+
+    [osd.kinds]
+    bluetooth = true
+    brightness = true
+    caffeine = true
+    dnd = true
+    keyboard_backlight = true
+    keyboard_layout = true
+    lock_keys = true
+    media = false
+    nightlight = true
+    power_profile = true
+    privacy = true
+    volume = true
+    volume_input = true
+    volume_output = true
+    wifi = true
+
+[[plugins.source]]
+enabled = true
+kind = "git"
+location = "https://github.com/noctalia-dev/official-plugins"
+name = "official"
+
+[[plugins.source]]
+enabled = true
+kind = "git"
+location = "https://github.com/noctalia-dev/community-plugins"
+name = "community"
+
+[plugins]
+enabled = [ "nightwatch75/dns-switcher", "noctalia/wallpaper_depth", "noctalia/wallhaven", "noctalia/mpvpaper", "yugaaank/better-clock", "alexander/screen-toolkit" ]
+
+[shell]
+app_icon_colorize = false
+avatar_path = ""
+button_borders = true
+clipboard_auto_paste = "off"
+clipboard_confirm_clear_history = true
+clipboard_enabled = true
+clipboard_history_max_entries = 100
+clipboard_image_action_command = ""
+corner_radius_scale = 1.0000000149011612
+date_format = "%A, %x"
+disable_mipmaps = false
+external_ip_enabled = false
+font_family = "JetBrainsMono NF SemiBold"
+input_borders = true
+launch_apps_as_systemd_services = false
+launch_apps_custom_command = ""
+niri_overview_type_to_launch_enabled = false
+offline_mode = false
+password_style = "random"
+polkit_agent = true
+popup_borders = true
+popup_shadows = true
+screen_time_enabled = false
+settings_show_advanced = true
+settings_window_translucent = true
+setup_wizard_enabled = true
+shared_gl_context = true
+show_location = true
+telemetry_enabled = false
+time_format = "{:%H:%M}"
+
+    [shell.animation]
+    enabled = true
+    speed = 1.0
+
+    [shell.greeter_sync]
+    auto_sync = false
+
+    [shell.launcher]
+    app_grid = false
+    auto_paste = "auto"
+    categories = true
+    compact = true
+    fetch_exchange_rates = true
+    provider_prefix = "/"
+    show_icons = true
+    sort_by_usage = true
+
+        [shell.launcher.dmenu]
+
+        [shell.launcher.providers.emoji]
+        global = true
+
+    [shell.mpris]
+    blacklist = [ "zen", "Zen Browser" ]
+
+    [shell.panel]
+    borders = true
+    clipboard_placement = "floating"
+    clipboard_position = "center"
+    control_center_placement = "attached"
+    control_center_position = "center"
+    floating_offset = 10
+    launcher_placement = "floating"
+    launcher_position = "center"
+    list_item_background = false
+    open_near_click_clipboard = false
+    open_near_click_control_center = true
+    open_near_click_launcher = false
+    open_near_click_session = false
+    open_near_click_wallpaper = false
+    polkit_placement = "floating"
+    polkit_position = "center"
+    session_placement = "floating"
+    session_position = "center"
+    shadow = true
+    transparency_mode = "solid"
+    wallpaper_placement = "floating"
+    wallpaper_position = "center"
+
+    [shell.privacy]
+    cam_filter_regex = ""
+    mic_filter_regex = ""
+    screen_filter_regex = ""
+
+    [shell.screen_corners]
+    enabled = false
+    size = 13
+
+    [shell.screenshot]
+    confirm_region = false
+    copy_to_clipboard = true
+    directory = ""
+    filename_pattern = ""
+    freeze_screen = true
+    pipe_command = ""
+    pipe_to_command = false
+    save_to_file = true
+    show_cursor = false
+
+    [shell.session]
+    grid = false
+    grid_columns = 2
+    show_shortcuts = true
+
+        [shell.session.power]
+
+        [[shell.session.actions]]
+        action = "lock"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "1"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "logout"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "2"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "lock_and_suspend"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "3"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "reboot"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "4"
+        variant = "default"
+
+        [[shell.session.actions]]
+        action = "shutdown"
+        command = ""
+        countdown_seconds = 0.0
+        enabled = true
+        glyph = ""
+        label = ""
+        shortcut = "5"
+        variant = "destructive"
+
+    [shell.shadow]
+    alpha = 0.55000001192092896
+    direction = "center"
+
+[storage]
+key_file = ""
+key_source = "secret-service"
+
+[system.monitor]
+cpu_poll_seconds = 2.0
+cpu_temp_activity_threshold = 60.0
+cpu_temp_critical_threshold = 85.0
+cpu_temp_sensor_path = ""
+cpu_usage_activity_threshold = 50.0
+cpu_usage_critical_threshold = 90.0
+disk_free_activity_threshold = 80.0
+disk_free_critical_threshold = 95.0
+disk_free_pct_activity_threshold = 80.0
+disk_free_pct_critical_threshold = 95.0
+disk_poll_seconds = 10.0
+disk_used_activity_threshold = 80.0
+disk_used_critical_threshold = 95.0
+disk_used_pct_activity_threshold = 80.0
+disk_used_pct_critical_threshold = 95.0
+enabled = true
+gpu_poll_seconds = 0.0
+gpu_temp_activity_threshold = 60.0
+gpu_temp_critical_threshold = 85.0
+gpu_usage_activity_threshold = 50.0
+gpu_usage_critical_threshold = 95.0
+gpu_vram_activity_threshold = 50.0
+gpu_vram_critical_threshold = 90.0
+memory_poll_seconds = 2.0
+net_rx_activity_threshold = 1.0
+net_rx_critical_threshold = 50.0
+net_tx_activity_threshold = 1.0
+net_tx_critical_threshold = 50.0
+network_poll_seconds = 3.0
+ram_pct_activity_threshold = 60.0
+ram_pct_critical_threshold = 90.0
+swap_pct_activity_threshold = 20.0
+swap_pct_critical_threshold = 80.0
+
+[theme]
+builtin = "Nord"
+community_palette = "ADW"
+custom_palette = ""
+mode = "dark"
+pure_black_dark = false
+source = "wallpaper"
+wallpaper_scheme = "muted"
+
+    [theme.templates]
+    builtin_ids = [ "btop", "cava", "foot", "kitty", "gtk3", "gtk4", "hyprland", "kcolorscheme", "qt" ]
+    community_ids = [ "discord", "zed", "heroiclauncher", "prismlauncher", "steam", "obs", "hyprtoolkit", "lazygit", "yazi" ]
+    enable_builtin_templates = true
+    enable_community_templates = true
+
+[wallpaper]
+directory = "/home/mkhoa/Pictures/Wallpapers"
+directory_dark = ""
+directory_light = ""
+edge_smoothness = 0.30000001192092896
+enabled = true
+fill_color = ""
+fill_mode = "crop"
+per_monitor_directories = false
+transition = [ "fade", "zoom" ]
+transition_duration = 1500.0
+transition_on_startup = false
+
+    [wallpaper.automation]
+    enabled = false
+    interval_seconds = 1800
+    order = "random"
+    recursive = true
+
+    [wallpaper.default]
+    path = "/home/mkhoa/Pictures/Wallpapers/majula.jpg"
+
+    [wallpaper.last]
+    path = "/home/mkhoa/Pictures/Wallpapers/majula.jpg"
+
+[weather]
+effects = true
+enabled = true
+refresh_minutes = 5
+unit = "metric"
+
+[widget.active_window]
+display = "text_only"
+icon_size = 8
+max_length = 250
+min_length = 0
+title_scroll = "none"
+type = "active_window"
+
+[widget.audio_visualizer]
+bands = 10
+centered = true
+interactive = false
+type = "audio_visualizer"
+width = 100
+
+[widget.battery]
+scale = 1.05
+
+[widget.brightness]
+scale = 1.05
+show_label = false
+type = "brightness"
+
+[widget.clock]
+font_family = "JetBrainsMono NF SemiBold"
+format = "{:%H:%M · %d/%m}"
+type = "clock"
+
+[widget.cpu]
+stat = "cpu_usage"
+type = "sysmon"
+
+[widget.date]
+format = "{:%a %d %b}"
+type = "clock"
+
+[widget.input_volume]
+device = "input"
+type = "volume"
+
+[widget.keyboard_layout]
+hide_when_single_layout = false
+type = "keyboard_layout"
+
+[widget.launcher]
+custom_image = "/usr/share/pixmaps/archlinux-logo.svg"
+custom_image_colorize = true
+glyph = "brand-apple-filled"
+
+    [widget.launcher.actions]
+    left = "panel-toggle control-center home"
+
+[widget.lock_keys]
+display = "short"
+hide_when_off = false
+show_caps_lock = true
+show_num_lock = true
+show_scroll_lock = false
+type = "lock_keys"
+
+[widget.media]
+art_size = 96
+hide_album_art = true
+hide_when_no_media = true
+max_length = 250
+min_length = 0
+title_scroll = "on_hover"
+type = "media"
+
+[widget.network]
+scale = 1.05
+show_label = false
+type = "network"
+
+[widget.network_rx]
+stat = "net_rx"
+type = "sysmon"
+
+[widget.network_tx]
+stat = "net_tx"
+type = "sysmon"
+
+[widget.notifications]
+scale = 1.05
+type = "notifications"
+
+[widget.output_volume]
+device = "output"
+type = "volume"
+
+[widget.ram]
+glyph = "stack-2"
+stat = "ram_used"
+type = "sysmon"
+
+[widget.spacer]
+type = "spacer"
+
+[widget.temp]
+stat = "cpu_temp"
+type = "sysmon"
+
+[widget.tray]
+drawer = false
+scale = 1.3500000000000001
+type = "tray"
+
+[widget.volume]
+scale = 1.05
+show_label = false
+type = "volume"
+
+[widget.workspaces]
+change_color_on_hover = true
+empty_color = "outline"
+focused_color = "primary"
+font_scale = 1.0
+inactive_pill_size = 0.6
+label_source = "name"
+max_label_chars = 4
+occupied_color = "on_surface_variant"
+pill_scale = 0.6
+show_labels = false

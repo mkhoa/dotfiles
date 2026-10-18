@@ -32,7 +32,7 @@ order = [ "default" ]
     concave_edge_corners = false
     contact_shadow = false
     enabled = true
-    end = [ "tray", "media", "brightness", "volume", "network", "bluetooth", "theme_mode", "notifications", "battery" ]
+    end = [ "tray", "media", "brightness", "volume", "network", "levi/warp:warp", "bluetooth", "theme_mode", "notifications", "battery" ]
     font_family = "JetBrainsMono Nerd Font"
     font_weight = 600
     hover_highlight = true
@@ -379,7 +379,7 @@ location = "https://github.com/noctalia-dev/community-plugins"
 name = "community"
 
 [plugins]
-enabled = [ "nightwatch75/dns-switcher", "noctalia/wallpaper_depth", "noctalia/wallhaven", "noctalia/mpvpaper", "yugaaank/better-clock", "alexander/screen-toolkit" ]
+enabled = [ "nightwatch75/dns-switcher", "noctalia/wallpaper_depth", "noctalia/wallhaven", "noctalia/mpvpaper", "yugaaank/better-clock", "alexander/screen-toolkit", "levi/warp" ]
 
 [shell]
 app_icon_colorize = false

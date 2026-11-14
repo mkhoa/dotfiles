@@ -30,7 +30,7 @@ hl.animation({ leaf = "fadeIn", enabled = true, speed = 5, bezier = "emphasizedD
 hl.animation({ leaf = "fadeOut", enabled = true, speed = 5, bezier = "standardDecel" })
 
 -- workspaces
-hl.animation({ leaf = "workspaces", enabled = true, speed = 2, spring = "spring_workspace", style = "fade" })
+hl.animation({ leaf = "workspaces", enabled = true, speed = 2, spring = "spring_workspace", style = "slidefade 15%" })
 
 -- specialWorkspace
 hl.animation({ leaf = "specialWorkspaceIn", enabled = true, speed = 2.8, spring = "spring_window", style = "slidevert" })

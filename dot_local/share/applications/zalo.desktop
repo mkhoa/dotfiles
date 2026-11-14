@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Zalo
+Comment=
+# Zalo bundles Electron 22 and runs under XWayland, which force_zero_scaling
+# leaves at 1x on the 1.8x screen. Staying on XWayland keeps fcitx5 typing.
+Exec=/usr/bin/zalo --force-device-scale-factor=1.8
+Icon=/opt/zalo/icon.png
+Terminal=false
+Type=Application
+StartupWMClass=zalo

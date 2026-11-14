@@ -26,12 +26,6 @@ hl.bind(mainMod .. " + Q", hl.dsp.window.close())
 hl.bind(mainMod .. " + ALT + Space", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 1 }))
 hl.bind(mainMod .. " + SHIFT + F", hl.dsp.window.fullscreen())
-hl.bind(mainMod .. " + ALT + Left", hl.dsp.layout("swapcol l"))
-hl.bind(mainMod .. " + ALT + Right", hl.dsp.layout("swapcol r"))
-
-hl.bind(mainMod .. " + R", function()
-	hl.dispatch(hl.dsp.layout("colresize +conf"))
-end)
 
 -- Change focus
 
@@ -185,7 +179,7 @@ hl.bind("SUPER + SHIFT + Z", zoom)
 --Change layouts per workspace
 
 hl.bind("SUPER + Tab", function()
-	local layouts = { "scrolling", "dwindle", "master", "monocle" }
+	local layouts = { "dwindle", "master", "monocle" }
 	local workspace = hl.get_active_workspace()
 	if hl.get_active_special_workspace() then
 		workspace = hl.get_active_special_workspace()

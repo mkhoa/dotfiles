@@ -42,6 +42,14 @@ hl.config({
 	},
 })
 
+-- Auto-hide: only the focused window keeps its bar. Rules re-evaluate on focus
+-- change, so unfocused windows grow by bar_height and the focused one shrinks.
+hl.window_rule({
+	name = "hyprbars-focused-only",
+	match = { focus = false },
+	["hyprbars:no_bar"] = true,
+})
+
 -- With right alignment the first button is the rightmost one,
 -- so the bar reads: [move left] [move right] [close]
 -- Colors come from the Noctalia theme, reloaded by its colors_changed hook

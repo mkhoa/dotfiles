@@ -16,7 +16,3 @@ hl.config({
 })
 
 hl.gesture({ fingers = 3, direction = "horizontal", action = "workspace" })
-
-hl.gesture({ fingers = 3, direction = "down", action = "close" })
--- mode "float" only floats; the default toggles, which would re-tile an already-floating window.
-hl.gesture({ fingers = 3, direction = "up", action = "float", mode = "float" })

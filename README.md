@@ -1,99 +1,55 @@
-# dotfiles
+# dotfiles (Ryoku)
 
-My Hyprland + [Noctalia](https://github.com/noctalia-dev/noctalia) setup on CachyOS, managed with [chezmoi](https://www.chezmoi.io/).
+My personal layer on top of [Ryoku](https://ryoku.dev), managed with [chezmoi](https://www.chezmoi.io/).
 
-Hyprland is configured in **Lua** (`~/.config/hypr/hyprland.lua` and the modules in `config/`), not `hyprland.conf`. Noctalia provides the bar, launcher, control center, lock screen and notifications, and generates a color palette from the wallpaper that it pushes to every themed app.
+Ryoku ships the desktop itself (Hyprland in Lua, the Quickshell bar, dock, launcher and Hub, the palette) as packages and re-lays those files on every `ryoku update`. This repo only holds what Ryoku leaves to the user, so the two never fight over a file.
+
+> The previous CachyOS + Noctalia setup lives on the `main` branch.
 
 ## What's included
 
-| Area | Config |
+| Area | Files |
 |---|---|
-| Window manager | Hyprland (Lua config), optional [hyprbars](https://github.com/hyprwm/hyprland-plugins) title bars with theme-colored buttons |
-| Shell / bar | Noctalia: bar, launcher (with emoji search), control center, desktop widgets, light/dark theme toggle on the bar |
-| Terminal | kitty, foot, fish, tmux, fastfetch (random Pokémon logo in kitty) |
-| Apps | Zed, Neovim, yazi, btop, Vesktop, MangoHud |
-| Theming | GTK 3/4, Qt5/Qt6 (qt5ct/qt6ct), Papirus icons, JetBrains Mono Nerd Font, all recolored by Noctalia templates |
+| Hyprland overrides | `hypr/user.lua`, `hypr/monitors_user.lua` (Ryoku loads these last; updates never touch them) |
+| Ryoku Settings | `ryoku/user_edits/hypr/{settings,settings_window,rebinds}.lua`, written by Ryoku Hub (Super+comma). Tracked as a backup so a new install gets the same gaps, input, animations and rebinds |
+| Overlay forks | `ryoku/user_edits/matugen/apps.toml` |
+| Shell | fish universal variables, tmux, fastfetch |
+| Apps | Neovim, Zed, yazi keymap, Vesktop settings, MangoHud, Millennium, Dolphin, fontconfig, a Zalo desktop entry |
 
-Wallpapers are not included. Noctalia looks for them in `~/Pictures/Wallpapers`, so drop your own there.
+Not tracked on purpose:
 
-## Requirements
+- **Files Ryoku ships** (`hypr/hyprland.lua`, `kitty/kitty.conf`, `fish/config.fish`, GTK settings, `yazi/yazi.toml`, ...). Updates overwrite them. To own one, fork it into `~/.config/ryoku/user_edits/` at the same path and track the fork.
+- **Generated files** (`hypr/monitors.lua`, `hypr/settings.lua`, the `*ryoku-colors*` palette outputs, `yazi/theme.toml`). The Hub or the theme daemon owns these.
+- **Ryoku tool stores** (`~/.config/ryoku/*.json`). Each has one writer; change them through the Hub or `ryoku-shell`.
 
-- [Hyprland 0.55+](https://github.com/hyprwm/Hyprland) (Lua config support)
-- [Noctalia v5+](https://github.com/noctalia-dev/noctalia)
-- [JetBrains Mono Nerd Font](https://www.nerdfonts.com/font-downloads) (`ttf-jetbrains-mono-nerd`)
-
-The package list assumes a CachyOS base; drop anything you don't use:
-
-```bash
-sudo pacman -S chezmoi kitty foot fish tmux fastfetch btop yazi zed zen-browser-bin neovim vesktop-bin papirus-icon-theme ttf-jetbrains-mono-nerd
-```
-
-Optional:
-
-```bash
-yay -S pokemon-colorscripts-git
-```
-
-```bash
-hyprpm update && hyprpm add https://github.com/hyprwm/hyprland-plugins && hyprpm enable hyprbars
-```
+Run `ryoku owner <path>` before adding anything new. It says whether the file is Ryoku's, generated, or yours.
 
 ## Install
 
+On a fresh Ryoku install:
+
 ```bash
-chezmoi init --apply https://github.com/mkhoa/dotfiles.git
+chezmoi init --apply --branch ryoku https://github.com/mkhoa/dotfiles.git
 ```
 
-Then adjust the machine-specific bits:
+Then reload Hyprland with `ryoku wm act config.reload`.
 
-- `~/.config/hypr/config/variables.lua`: default apps (`TERMINAL`, `BROWSER`, `EDITOR`, ...) and monitor names (`MONITOR1`...)
-- `~/.config/hypr/config/monitors.lua`: resolution, scale and position
-- `~/.config/hypr/config/inputs.lua`: keyboard layout, touchpad and gestures
-
-To have the power button lock the screen instead of shutting down, stop logind from handling it:
-
-```ini
-# /etc/systemd/logind.conf.d/power-key.conf
-[Login]
-HandlePowerKey=ignore
-HandlePowerKeyLongPress=ignore
-```
+Displays are set in Ryoku Hub > Displays. Pin anything the Hub can't express in `~/.config/hypr/monitors_user.lua`.
 
 ### Keeping it in sync
 
-Noctalia rewrites its color template files (`hypr/noctalia.lua`, `foot/themes/noctalia`, `zed/themes/noctalia.json`, ...) whenever the wallpaper or theme changes. After the first install, apply changes **one file at a time** so a blanket apply doesn't revert the live palette:
+After a change made in the Hub or an app, pull it into the repo:
 
 ```bash
-chezmoi diff -- ~/.config/hypr/config/keybinds.lua
-chezmoi apply ~/.config/hypr/config/keybinds.lua
+chezmoi re-add
 ```
 
-## Keybinds
+Apply one file at a time when going the other way:
 
-`SUPER` is the main modifier. Highlights:
+```bash
+chezmoi diff -- ~/.config/hypr/user.lua
+```
 
-| Keys | Action |
-|---|---|
-| `SUPER + Space` | Launcher |
-| `SUPER + T` / `SUPER + Return` | Terminal |
-| `SUPER + W` / `E` / `D` | Browser / editor / yazi |
-| `SUPER + Q` | Close window |
-| `SUPER + F` / `SUPER + SHIFT + F` | Maximize / fullscreen |
-| `SUPER + ALT + Space` | Toggle floating |
-| `SUPER + Arrows` | Move focus |
-| `SUPER + SHIFT + Arrows` | Move window |
-| `SUPER + CTRL + Left/Right` | Previous / next workspace |
-| `SUPER + S` / `SUPER + SHIFT + S` | Toggle scratchpad / send window to it |
-| `SUPER + X` / `N` / `V` | Control center / notifications / audio |
-| `SUPER + C` | Clipboard history |
-| `SUPER + B` | Toggle bar |
-| `SUPER + L`, power button | Lock screen |
-| `SUPER + ALT + C` | Session menu |
-| `SUPER + SHIFT + W` / `SUPER + SHIFT + X` | Pick wallpaper / random wallpaper |
-| `Print` / `SHIFT + Print` / `SUPER + Print` | Screenshot region / full screen / annotate |
-| `SUPER + SHIFT + Z` | Zoom |
-| `SUPER + ,` | Noctalia settings |
-
-Touchpad: three-finger swipe left/right switches workspace, down closes the window, up floats it.
-
-The full list lives in [`dot_config/hypr/config/keybinds.lua`](dot_config/hypr/config/keybinds.lua).
+```bash
+chezmoi apply ~/.config/hypr/user.lua
+```
